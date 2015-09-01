@@ -25,3 +25,4 @@ You can reach the Cozy community via various support:
 * Post on our [Forum](https://groups.google.com/forum/?fromgroups#!forum/cozy-cloud)
 * Post issues on the [Github repos](https://github.com/mycozycloud/)
 * Via [Twitter](http://twitter.com/mycozycloud)
+# CricketTrumpCard
