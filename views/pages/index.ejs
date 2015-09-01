@@ -16,28 +16,22 @@
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
     <form class="fa">
-        <a class="fa " href="/get/country">Country </a>
+        <p>
+            <a active class="btn btn-primary btn-sm" href="/get/bat_avg/50">Great Batsmen </a>
+            <a active class="btn btn-primary btn-sm" href="/get/bat_avg/45">Good Batsmen </a>
+        </p>
     </form>
 
-
-    <div class="btn-group" data-toggle="buttons-radio">
-        <button type="button" class="btn btn-primary">AUS</button>
-        <button type="button" class="btn btn-primary">ENG</button>
-        <button type="button" class="btn btn-primary">IND</button>
-        <button type="button" class="btn btn-primary">NZ</button>
-        <button type="button" class="btn btn-primary">PAK</button>
-        <button type="button" class="btn btn-primary">SA</button>
-        <button type="button" class="btn btn-primary">SL</button>
-        <button type="button" class="btn btn-primary">WI</button>
-
-        <input type="text" id="buttonvalue"/>
-
-        <script language="javascript" type="text/javascript">
-            $(".btn-group button").click(function () {
-                $("#buttonvalue").val($(this).text());
-            });
-        </script>
-    </div>
+    <form class="fa">
+        <a class="btn btn-primary btn-sm" href="/get/country/AUS">AUS </a>
+        <a class="btn btn-primary btn-sm" href="/get/country/ENG">ENG</a>
+        <a class="btn btn-primary btn-sm" href="/get/country/IND">IND</a>
+        <a class="btn btn-primary btn-sm" href="/get/country/NZ">NZ</a>
+        <a class="btn btn-primary btn-sm" href="/get/country/PAK">PAK</a>
+        <a class="btn btn-primary btn-sm" href="/get/country/SA">SA</a>
+        <a class="btn btn-primary btn-sm" href="/get/country/SL">SL</a>
+        <a class="btn btn-primary btn-sm" href="/get/country/WI">WI</a>
+    </form>
 
     <table class="table table-bordered">
         <thead>

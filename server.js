@@ -12,14 +12,11 @@ app.configure(function () {// set the view engine to ejs
     app.set('view engine', 'ejs');
 });
 
-app.get('/', routes.getPlayers);
+app.get('/', routes.getTopPlayers);
 
-app.get('/get/country', function(request, response){
+app.get('/get/country/:id', routes.getPlayerForCountry);
 
-    console.log("Hello ")
-    console.log(request.body.countryValue);
-
-});
+app.get('/get/bat_avg/:id', routes.getPlayerWithBatAvg);
 
 // Starts the server itself
 app.listen(port);
