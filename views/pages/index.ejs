@@ -18,12 +18,13 @@
     <script>
         $(document).ready(function () {
             instagramAuthURL = "https://api.instagram.com/oauth/authorize/?client_id=a60a41e5bc3d440e9ddb6f50160df41b&redirect_uri=http://localhost:4002/redirect&response_type=code";
-            $("a.authLink").attr("href", instagramAuthURL);
+            $("a.label.label-success").attr("href", instagramAuthURL);
         });
     </script>
 
-    <p><a class="authLink">Authenticate via Instagram </a>
-    <p>
+    <div align="center"><h3><a class="label label-success" >Authenticate via Instagram </a></h3></div>
+
+
 </div>
 
 <footer>

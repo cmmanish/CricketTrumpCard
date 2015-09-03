@@ -39,7 +39,8 @@ exports.handleRedirect = function (req, res) {
 
             res.render('pages/redirect', {
                 full_name: full_name,
-                access_token: JSONoutput.access_token
+                access_token: JSONoutput.access_token,
+                id: JSONoutput.user.id
             });
         }
     });
