@@ -14,21 +14,12 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script LANGUAGE="JavaScript" src="lib/js/authLink.js"></script>
-    <script>
-        $(document).ready(function () {
-            instagramAuthURL = "https://api.instagram.com/oauth/authorize/?client_id=a60a41e5bc3d440e9ddb6f50160df41b&redirect_uri=http://localhost:4002/redirect&response_type=code";
-            $("a.authLink").attr("href", instagramAuthURL);
-        });
-    </script>
 
-    <p><a class="authLink">Authenticate via Instagram </a>
-    <p>
+    <p><a href ="/auth"> Welcome to Instagram Auth Service </a></p>
+
 </div>
-
 <footer>
     <% include ../partials/footer %>
 </footer>
-
 </body>
 </html>
