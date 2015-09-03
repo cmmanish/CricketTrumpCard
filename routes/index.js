@@ -3,10 +3,11 @@ var express = require('express'),
     router = express.Router();
 
 var INSTAGRAM_URL = 'https://api.instagram.com/oauth/access_token'
-var CLIENT_ID = 'a60a41e5bc3d440e9ddb6f50160df41b'
-var CLIENT_SECRET = '4ee366e72df84bd4be5765691ab53f04'
+var CLIENT_ID = '42fbdc7bccea4ae79de1e006299c16f6'
+var CLIENT_SECRET = 'fff93c2f2f714a3490c707beea73b711'
 var REDIRECT_URL = 'http://localhost:4002/redirect'
 var JSONoutput = ''
+
 exports.getInstaGateHome = function (req, res) {
 
     res.render('pages/index');
@@ -16,9 +17,9 @@ exports.getInstaGateHome = function (req, res) {
 exports.handleRedirect = function (req, res) {
 
     var CODE = req.query.code
-    var full_name, username = ''
+    var id = '', full_name = '', username = ''
     console.log('code: ', CODE);
-    console.log('Going to POST the Code');
+    console.log('Going to POST the Code to Instagram');
     request({
         url: INSTAGRAM_URL, //INSTAGRAM_URL to hit
         method: 'POST',
@@ -31,7 +32,7 @@ exports.handleRedirect = function (req, res) {
         }
     }, function (error, response, body) {
         if (error || response.statusCode != 200) {
-            console.log(error);
+            console.log('Error: ' + error);
         } else {
             JSONoutput = JSON.parse(body.toString());
             username = JSONoutput.user.username
