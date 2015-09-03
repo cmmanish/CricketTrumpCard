@@ -31,7 +31,7 @@ node_modules
 
 ### Java template
 *.class
-
+.gradle/
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -44,3 +44,4 @@ node_modules
 hs_err_pid*
 
 
+.idea/
