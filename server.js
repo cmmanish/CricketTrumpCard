@@ -14,8 +14,6 @@ app.configure(function () {// set the view engine to ejs
 
 app.get('/', routes.getInstaGateHome);
 
-app.get('/auth', routes.handleAuth);
-
 app.get('/redirect', routes.handleRedirect);
 
 // Starts the server itself

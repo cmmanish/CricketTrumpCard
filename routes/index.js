@@ -17,7 +17,7 @@ exports.getInstaGateHome = function (req, res) {
 exports.handleRedirect = function (req, res) {
 
     var CODE = req.query.code
-    var id = '', full_name = '', username = ''
+    var profile_picture = '', id = '', full_name = '', username = ''
     console.log('code: ', CODE);
     console.log('Going to POST the Code to Instagram');
     request({
@@ -41,7 +41,8 @@ exports.handleRedirect = function (req, res) {
             res.render('pages/redirect', {
                 full_name: full_name,
                 access_token: JSONoutput.access_token,
-                id: JSONoutput.user.id
+                id: JSONoutput.user.id,
+                profile_picture: JSONoutput.user.profile_picture
             });
         }
     });
