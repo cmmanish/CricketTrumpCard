@@ -38,6 +38,7 @@ exports.handleRedirect = function (req, res) {
             console.log('Invalid Status Code Returned:', response.statusCode);
         } else {
             JSONoutput = JSON.parse(body.toString());
+            id = JSONoutput.user.id
             username = JSONoutput.user.username
             full_name = JSONoutput.user.full_name
             access_token: JSONoutput.access_token
@@ -53,6 +54,7 @@ exports.handleRedirect = function (req, res) {
                 else {
                     JSONoutput = JSON.parse(body.toString());
                     res.render('pages/redirect', {
+                        id: id,
                         username: username,
                         full_name: full_name,
                         data_array: JSONoutput.data
