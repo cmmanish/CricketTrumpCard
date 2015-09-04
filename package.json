@@ -1,10 +1,10 @@
 {
   "name": "instaGate",
   "version": "0.0.1",
-  "description": "",
+  "description": "instaGate",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/cmmanish/InstaGate"
   },
   "main": "server2.js",
   "dependencies": {
