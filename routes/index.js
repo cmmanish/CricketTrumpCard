@@ -7,6 +7,8 @@ var CLIENT_ID = '42fbdc7bccea4ae79de1e006299c16f6'
 var CLIENT_SECRET = 'fff93c2f2f714a3490c707beea73b711'
 var REDIRECT_URL = 'http://localhost:4002/redirect'
 var JSONoutput = ''
+var access_token = ''
+var baseURI = 'https://api.instagram.com/v1/media/popular?access_token='
 
 exports.getInstaGateHome = function (req, res) {
 
@@ -17,7 +19,7 @@ exports.getInstaGateHome = function (req, res) {
 exports.handleRedirect = function (req, res) {
 
     var CODE = req.query.code
-    var profile_picture = '', id = '', full_name = '', username = ''
+    var access_token = '', profile_picture = '', id = '', full_name = '', username = ''
     console.log('code: ', CODE);
     console.log('Going to POST the Code to Instagram');
     request({
@@ -33,24 +35,30 @@ exports.handleRedirect = function (req, res) {
     }, function (error, response, body) {
         if (error || response.statusCode != 200) {
             console.log('Error: ' + error);
+            console.log('Invalid Status Code Returned:', response.statusCode);
         } else {
             JSONoutput = JSON.parse(body.toString());
             username = JSONoutput.user.username
             full_name = JSONoutput.user.full_name
+            access_token: JSONoutput.access_token
+            console.log('JSONoutput: ', JSONoutput.access_token);
+            URI = baseURI + JSONoutput.access_token;
+            console.log("DO a GET ON : ", URI);
 
-            res.render('pages/redirect', {
-                full_name: full_name,
-                access_token: JSONoutput.access_token,
-                id: JSONoutput.user.id,
-                profile_picture: JSONoutput.user.profile_picture
+            request(URI, function (error, response, body) {
+                if (error || response.statusCode != 200) {
+                    console.log('Error:', error);
+                    console.log('Invalid Status Code Returned:', response.statusCode);
+                }
+                else {
+                    JSONoutput = JSON.parse(body.toString());
+                    res.render('pages/redirect', {
+                        username: username,
+                        full_name: full_name,
+                        data_array: JSONoutput.data
+                    });
+                }
             });
         }
     });
-
 };
-
-//exports.handleAuth = function (req, res, err) {
-//
-//
-//        httpGetAuth.getAuthenticated();
-//};
