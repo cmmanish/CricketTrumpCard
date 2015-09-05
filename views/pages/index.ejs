@@ -1,0 +1,34 @@
+<!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<div class="jumbotron">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script LANGUAGE="JavaScript" src="lib/js/authLink.js"></script>
+    <script>
+        $(document).ready(function () {
+instagramAuthURL = "https://api.instagram.com/oauth/authorize/?client_id=42fbdc7bccea4ae79de1e006299c16f6&redirect_uri=http://localhost:4002/redirect&response_type=code";
+            $("a.label.label-success").attr("href", instagramAuthURL);
+        });
+    </script>
+
+    <div align="center"><h3><a class="label label-success" >Authenticate via Instagram </a></h3></div>
+
+</div>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

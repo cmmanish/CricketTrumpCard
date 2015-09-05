@@ -1,0 +1,55 @@
+<!-- views/pages/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<div class="jumbotron">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <p><div align="left"><h3>Hello <%= full_name %></h3></div>
+
+    <p><div align="center"><h4>Popular Media at the moment. </h4></div>
+
+    <table width="50" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>Instagram Profile Pic</th>
+            <th>Instagram id</th>
+            <th>Instagram username</th>
+            <th>Instagram full_name</th>
+        </tr>
+        </thead>
+    </table>
+
+    <div>
+        <% for (var i = 0; i < data_array.length; i++) { %>
+        <table width="50" class="table table-bordered">
+            <tr>
+                <td align=left><img src=<%= data_array[i].user.profile_picture %> alt="W3Schools.com" style="width:104px;height:142px;"></td>
+                <td align=left><%= data_array[i].user.id %></td>
+                <td align=left><%= data_array[i].user.username %></td>
+                <td align=left><%= data_array[i].user.full_name %></td>
+
+            </tr>
+        </table>
+        <% } %>
+    </div>
+    </table>
+
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+</div>
+</body>
+</head>
+</html>
