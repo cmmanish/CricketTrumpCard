@@ -17,9 +17,8 @@
     <script LANGUAGE="JavaScript" src="lib/js/authLink.js"></script>
     <script>
         $(document).ready(function () {
-            alert(window.location.href)
             if (window.location.href == "http://localhost:4002/") {
-                instagramAuthURL = "https://api.instagram.com/oauth/authorize/?client_id=42fbdc7bccea4ae79de1e006299c16f6&redirect_uri=localhost:4002/redirect&response_type=code";
+                instagramAuthURL = "https://api.instagram.com/oauth/authorize/?client_id=42fbdc7bccea4ae79de1e006299c16f6&redirect_uri=http://localhost:4002/redirect&response_type=code";
             }
             else {
                 instagramAuthURL = "https://api.instagram.com/oauth/authorize/?client_id=42fbdc7bccea4ae79de1e006299c16f6&redirect_uri=https://instagate.dotcloudapp.com/redirect&response_type=code";
