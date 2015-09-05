@@ -54,6 +54,7 @@ exports.handleRedirect = function (req, res) {
                 else {
                     JSONoutput = JSON.parse(body.toString());
                     res.render('pages/redirect', {
+                        profile_picture: profile_picture,
                         id: id,
                         username: username,
                         full_name: full_name,
