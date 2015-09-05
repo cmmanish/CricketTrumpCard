@@ -15,9 +15,9 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-    <p><div align="left"><h3>Hello <%= full_name %></h3></div>
+    <p><div align="center"><a class="label label-success">Hello <%= full_name %> </a></div></p>
 
-    <p><div align="center"><h4>Popular Media at the moment. </h4></div>
+    <div align="center"><h4>Popular Media at the moment. </h4></div>
 
     <table width="50" class="table table-bordered">
         <thead>
@@ -33,7 +33,8 @@
         <% for (var i = 0; i < data_array.length; i++) { %>
         <table width="50" class="table table-bordered">
             <tr>
-                <td align=left><img src=<%= data_array[i].user.profile_picture %> style="width:104px;height:142px;"></td>
+                <td align=left><img src=<%= data_array[i].user.profile_picture %> style="width:104px;height:142px;">
+                </td>
                 <td align=left><%= data_array[i].user.username %></td>
                 <td align=left><%= data_array[i].user.full_name %></td>
 
