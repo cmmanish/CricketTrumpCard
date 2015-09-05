@@ -5,7 +5,7 @@ var express = require('express'),
 var INSTAGRAM_URL = 'https://api.instagram.com/oauth/access_token'
 var CLIENT_ID = '42fbdc7bccea4ae79de1e006299c16f6'
 var CLIENT_SECRET = 'fff93c2f2f714a3490c707beea73b711'
-var REDIRECT_URL = 'http://localhost:4002/redirect'
+var REDIRECT_URL = 'https://instagate.dotcloudapp.com/redirect'
 var JSONoutput = ''
 var access_token = ''
 var baseURI = 'https://api.instagram.com/v1/media/popular?access_token='

@@ -1,7 +1,7 @@
 {
-  "name": "instagate-1",
+  "name": "instagate",
   "version": "0.0.1",
-  "description": "instagate-1",
+  "description": "instagate",
   "repository": {
     "type": "git",
     "url": "https://github.com/cmmanish/InstaGate"
